@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:12.3
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=document
+      - POSTGRES_PASSWORD=document
+      - POSTGRES_DB=doc_db

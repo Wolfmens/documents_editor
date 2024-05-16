@@ -1,0 +1,15 @@
+spring:
+  jpa:
+    generate-dll: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/doc_db
+    username: document
+    password: document
+    hikari:
+      schema: doc_schema
+      connection-init-sql: CREATE SCHEMA IF NOT EXISTS doc_schema
+      connection-timeout: 10000

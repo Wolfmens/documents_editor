@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Editor</title>
+</head>
+<body>
+ <div id="documents_container">
+     <h1>DOCUMENTS</h1>
+     <form action="/app/v1/docks/update" method="post">
+         <input type="hidden" name="id" th:value="${request.id}">
+         <div>
+             <label for="name">Name Document</label>
+             <input type="text" id="name" name="name" required th:value="${request.name}">
+         </div>
+         <div>
+             <label for="body">Document Description</label>
+             <input type="text" id="body" name="body" required th:value="${request.body}">
+         </div>
+         <div>
+             <label>Type by Document</label>
+             <select th:field="*{request.typeDockFile}">
+                 <option th:value="OFFER">OFFER</option>
+                 <option th:value="LETTER">LETTER</option>
+                 <option th:value="CONTRACT">CONTRACT</option>
+             </select>
+             <!--            <input type=text id="typeDockFile" name="typeDockFile" required th:value="${request.typeDockFile}">-->
+         </div>
+         <div>
+             <button type="submit">Update Document</button>
+         </div>
+     </form>
+ </div>
+</body>
+</html>
